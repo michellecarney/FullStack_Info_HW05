@@ -247,3 +247,7 @@ input[type=range]::-webkit-slider-runnable-track {
 	padding: 8px 12px;
 	line-height: 1.4;
 }
+
+.loginquestion {
+	display: block;
+}

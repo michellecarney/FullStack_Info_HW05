@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block header %}
+	<!-- super function here -->
 	{{ super() }}
 	<form action="logout" id="logout">
+		<h1>hello</h1>
 		<span id="username">Logged in as {{ name }}</span>
 		<input class="action-button" id="logout-button" type="submit" value="Logout">
 	</form>
@@ -21,7 +23,14 @@
 		<span class="result-item">Your favorite food is {{ surveyResponse['food']}}</span>
 		<span class="result-item">Your favorite vacation spot is {{ surveyResponse['vacation']}}</span>
 
-		<h3>Wow! Your front end skillz are getting sharp!</h3>
+		{% if surveyResponse['fe-before'] >  surveyResponse['fe-after'] %}
+			<h3>oops sorry...</h3>
+		{% else %}
+			<h3>Wow! Your front end skillz are getting sharp!</h3>
+		{% endif %}
+
+
+
 		<span class="result-item">Before IO Lab, your front end skillz were at a {{ surveyResponse['fe-before']}}</span>
 		<span class="result-item">But in just a few short weeks of IO Lab, your front end skillz are now a {{ surveyResponse['fe-after']}}</span>
 
